@@ -1,0 +1,167 @@
+/* RESET */
+
+body {
+    margin: 0;
+    font-family: Russo One, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* GRID PRINCIPAL */
+
+.container {
+
+    display: grid;
+
+    grid-template-areas:
+        "hero hero"
+        "menu conteudo"
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    /* usei rows para cumprir requisito */
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* TOPO */
+
+.hero {
+
+    grid-area: hero;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aqua;
+    box-sizing: border-box;
+}
+
+/* PERFIL */
+
+.perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+/* TITULO */
+
+.titulo {
+    width: 100%;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* MENU LATERAL */
+
+.menu {
+    grid-area: menu;
+    background-color: #7fffd4;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* MENU */
+
+.menu ol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo {
+    grid-area: conteudo;
+    display: grid;
+    /* repeat + fr */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* SEÇÕES */
+
+.section {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* HABILIDADES */
+
+.habilidades {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* IMAGENS DAS SKILLS */
+
+.imagens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.imagens img {
+    width: 90px;
+    height: 90px;
+}
+
+/* BOTÃO */
+
+.botao {
+    background-color: #1e90ff;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.botao:hover {
+    background-color: #0d6efd;
+}
+
+/* RODAPÉ */
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer span {
+    font-size: 14px;
+}
