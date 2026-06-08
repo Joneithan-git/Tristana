@@ -1,5 +1,4 @@
 /* RESET */
-
 body {
     margin: 0;
     font-family: Russo One, sans-serif;
@@ -8,26 +7,20 @@ body {
 }
 
 /* GRID PRINCIPAL */
-
 .container {
-
     display: grid;
-
     grid-template-areas:
         "hero hero"
         "menu conteudo"
         "footer footer";
     grid-template-columns: 1fr 3fr;
-    /* usei rows para cumprir requisito */
     grid-template-rows: auto 1fr auto;
     gap: 20px;
     min-height: 100vh;
 }
 
 /* TOPO */
-
 .hero {
-
     grid-area: hero;
     width: 100%;
     padding: 40px 20px;
@@ -40,7 +33,6 @@ body {
 }
 
 /* PERFIL */
-
 .perfil {
     width: 120px;
     height: 120px;
@@ -50,7 +42,6 @@ body {
 }
 
 /* TITULO */
-
 .titulo {
     width: 100%;
 }
@@ -60,7 +51,6 @@ h1 {
 }
 
 /* MENU LATERAL */
-
 .menu {
     grid-area: menu;
     background-color: #7fffd4;
@@ -71,7 +61,6 @@ h1 {
 }
 
 /* MENU */
-
 .menu ol {
     display: flex;
     flex-direction: column;
@@ -90,18 +79,15 @@ h1 {
 }
 
 /* CONTEÚDO PRINCIPAL */
-
 .conteudo {
     grid-area: conteudo;
     display: grid;
-    /* repeat + fr */
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
 }
 
 /* SEÇÕES */
-
 .section {
     background-color: white;
     padding: 30px 20px;
@@ -110,8 +96,12 @@ h1 {
     box-sizing: border-box;
 }
 
-/* HABILIDADES */
+/* ITEM USANDO SPAN */
+.section:first-child {
+    grid-column: span 2;
+}
 
+/* HABILIDADES */
 .habilidades {
     display: flex;
     flex-direction: column;
@@ -120,7 +110,6 @@ h1 {
 }
 
 /* IMAGENS DAS SKILLS */
-
 .imagens {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -135,7 +124,6 @@ h1 {
 }
 
 /* BOTÃO */
-
 .botao {
     background-color: #1e90ff;
     border: none;
@@ -152,16 +140,104 @@ h1 {
 }
 
 /* RODAPÉ */
-
 footer {
     grid-area: footer;
     width: 100%;
     background-color: aqua;
-    color: rgb(0, 0, 0);
+    color: black;
     padding: 10px 0;
     text-align: center;
 }
 
 footer span {
     font-size: 14px;
+}
+
+/* LOGIN */
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+.login-banner {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.login-banner h1 {
+    font-size: 40px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 300px;
+}
+
+.formulario input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.formulario button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e90ff;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #0d6efd;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "hero"
+            "menu"
+            "conteudo"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .perfil {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .imagens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section:first-child {
+        grid-column: span 1;
+    }
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
 }
